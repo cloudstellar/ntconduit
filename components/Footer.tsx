@@ -1,75 +1,86 @@
+import Image from 'next/image';
 import Link from 'next/link';
-import { MapPin, Phone, Mail } from 'lucide-react';
+import { ExternalLink, MapPin, Phone } from 'lucide-react';
+import ntLogo from '@/CI/NT_2_v3.png';
+
+const footerLinks = [
+    { label: 'บริการท่อร้อยสาย', href: '#services' },
+    { label: 'การใช้งาน', href: '#use-cases' },
+    { label: 'รูปแบบบริการ', href: '#models' },
+    { label: 'โครงการอ้างอิง', href: '#proof' },
+    { label: 'คำถามที่พบบ่อย', href: '#faq' },
+];
 
 const Footer = () => {
     return (
-        <footer className="bg-charcoal text-white pt-16 pb-8 border-t border-gray-800">
-            <div className="container mx-auto px-4 md:px-6">
-                <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
-                    {/* Brand */}
-                    <div className="md:col-span-1">
-                        <div className="flex items-center gap-2 mb-6">
-                            <div className="w-8 h-8 bg-ntYellow rounded-md flex items-center justify-center">
-                                <span className="text-charcoal font-bold text-xl">N</span>
-                            </div>
-                            <span className="text-xl font-bold tracking-tight text-white">
-                                NT Conduit
-                            </span>
-                        </div>
-                        <p className="text-gray-400 text-sm leading-relaxed mb-6">
-                            มุ่งมั่นพัฒนาโครงสร้างพื้นฐานท่อร้อยสายสื่อสารใต้ดิน
-                            เพื่อภูมิทัศน์ที่สวยงามและความมั่นคงของระบบสื่อสารไทย
+        <footer className="border-t border-lineSoft bg-white">
+            <div className="bg-ntYellow">
+                <div className="mx-auto grid max-w-7xl gap-6 px-4 py-8 md:grid-cols-[1fr_auto] md:items-center md:px-8">
+                    <div>
+                        <p className="text-sm font-bold uppercase tracking-normal text-charcoal">Official Contact</p>
+                        <h2 className="mt-2 text-2xl font-bold leading-tight text-charcoal md:text-3xl">
+                            ขอข้อมูลบริการ เส้นทาง และเงื่อนไขล่าสุด
+                        </h2>
+                    </div>
+                    <Link
+                        href="https://www.ntplc.co.th"
+                        className="inline-flex items-center justify-center gap-2 rounded-[8px] bg-charcoal px-6 py-3 text-sm font-bold text-white transition-colors hover:bg-ntGray"
+                    >
+                        ไปที่เว็บไซต์ NT
+                        <ExternalLink size={18} />
+                    </Link>
+                </div>
+            </div>
+
+            <div className="mx-auto max-w-7xl px-4 py-12 md:px-8">
+                <div className="grid gap-10 lg:grid-cols-[1.05fr_0.55fr_0.75fr]">
+                    <div>
+                        <Image
+                            src={ntLogo}
+                            alt="บริษัท โทรคมนาคมแห่งชาติ จำกัด (มหาชน)"
+                            className="h-auto w-[132px]"
+                        />
+                        <p className="mt-5 max-w-xl text-sm leading-7 text-ntGray">
+                            ข้อมูลบริการท่อร้อยสายสื่อสารและบริการโครงข่ายปลายทางที่เกี่ยวข้อง
+                            จัดทำเพื่อประกอบการติดต่อประสานงานกับฝ่ายท่อร้อยสาย
+                            สายงานโครงสร้างพื้นฐาน
                         </p>
                     </div>
 
-                    {/* Quick Links */}
                     <div>
-                        <h3 className="font-semibold text-white mb-6">เมนูหลัก</h3>
-                        <ul className="space-y-4 text-sm text-gray-400">
-                            <li><Link href="#about" className="hover:text-ntYellow transition-colors">เกี่ยวกับโครงการ</Link></li>
-                            <li><Link href="#network" className="hover:text-ntYellow transition-colors">โครงข่ายท่อร้อยสาย</Link></li>
-                            <li><Link href="#faq" className="hover:text-ntYellow transition-colors">คำถามที่พบบ่อย</Link></li>
-                            <li><Link href="#contact" className="hover:text-ntYellow transition-colors">ติดต่อเรา</Link></li>
-                        </ul>
+                        <h3 className="text-base font-bold text-charcoal">เมนู</h3>
+                        <nav className="mt-4 grid gap-3" aria-label="เมนูส่วนท้าย">
+                            {footerLinks.map((link) => (
+                                <Link key={link.href} href={link.href} className="text-sm font-bold text-ntGray hover:text-charcoal">
+                                    {link.label}
+                                </Link>
+                            ))}
+                        </nav>
                     </div>
 
-                    {/* Resources */}
                     <div>
-                        <h3 className="font-semibold text-white mb-6">ข้อมูลเพิ่มเติม</h3>
-                        <ul className="space-y-4 text-sm text-gray-400">
-                            <li><Link href="#" className="hover:text-ntYellow transition-colors">นโยบายความเป็นส่วนตัว</Link></li>
-                            <li><Link href="#" className="hover:text-ntYellow transition-colors">เงื่อนไขการใช้งาน</Link></li>
-                            <li><Link href="#" className="hover:text-ntYellow transition-colors">แผนแม่บท</Link></li>
-                        </ul>
-                    </div>
-
-                    {/* Contact */}
-                    <div>
-                        <h3 className="font-semibold text-white mb-6">ติดต่อ</h3>
-                        <ul className="space-y-4 text-sm text-gray-400">
-                            <li className="flex items-start gap-3">
-                                <MapPin size={18} className="text-ntYellow mt-0.5" />
-                                <span>บริษัท โทรคมนาคมแห่งชาติ จำกัด (มหาชน) <br />99 ถนนแจ้งวัฒนะ แขวงทุ่งสองห้อง <br />เขตหลักสี่ กรุงเทพมหานคร 10210</span>
-                            </li>
-                            <li className="flex items-center gap-3">
-                                <Phone size={18} className="text-ntYellow" />
-                                <span>02-104-3000</span>
-                            </li>
-                            <li className="flex items-center gap-3">
-                                <Mail size={18} className="text-ntYellow" />
-                                <span>contact@ntconduit.com</span>
-                            </li>
-                        </ul>
+                        <h3 className="text-base font-bold text-charcoal">ติดต่อ</h3>
+                        <div className="mt-4 grid gap-4 text-sm leading-7 text-ntGray">
+                            <div className="flex gap-3">
+                                <MapPin className="mt-1 h-4 w-4 shrink-0 text-charcoal" aria-hidden="true" />
+                                <p>
+                                    ฝ่ายท่อร้อยสาย สายงานโครงสร้างพื้นฐาน<br />
+                                    บริษัท โทรคมนาคมแห่งชาติ จำกัด (มหาชน)
+                                </p>
+                            </div>
+                            <div className="flex gap-3">
+                                <Phone className="mt-1 h-4 w-4 shrink-0 text-charcoal" aria-hidden="true" />
+                                <p>Contact Center 1888</p>
+                            </div>
+                            <Link href="https://www.ntplc.co.th" className="font-bold text-charcoal hover:text-ntGray">
+                                www.ntplc.co.th
+                            </Link>
+                        </div>
                     </div>
                 </div>
 
-                <div className="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-gray-500">
-                    <p>&copy; {new Date().getFullYear()} National Telecom Public Company Limited. All rights reserved.</p>
-                    <div className="flex gap-6">
-                        <span>Facebook</span>
-                        <span>LinkedIn</span>
-                        <span>Twitter</span>
-                    </div>
+                <div className="mt-10 border-t border-lineSoft pt-6 text-xs font-bold text-ntGray">
+                    <p>© {new Date().getFullYear()} National Telecom Public Company Limited. All rights reserved.</p>
                 </div>
             </div>
         </footer>
