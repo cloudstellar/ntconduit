@@ -7,12 +7,12 @@ import Footer from '@/components/Footer';
 const ntTypeface = localFont({
   src: [
     {
-      path: '../CI/NT Regular.otf',
+      path: '../assets/fonts/nt-regular.otf',
       weight: '400',
       style: 'normal',
     },
     {
-      path: '../CI/NT Bold.otf',
+      path: '../assets/fonts/nt-bold.otf',
       weight: '700',
       style: 'normal',
     },

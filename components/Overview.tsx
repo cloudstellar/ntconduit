@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import { CheckCircle2, Network, Route, ShieldCheck } from 'lucide-react';
-import manholeImage from '@/CI/web-assets/conduit-manhole.jpg';
+import manholeImage from '@/assets/images/conduit-manhole.jpg';
 
 const benefits = [
     'ลดการลงทุนซ้ำซ้อน และใช้ทรัพยากรโครงสร้างพื้นฐานร่วมกันให้เกิดประโยชน์สูงสุด',

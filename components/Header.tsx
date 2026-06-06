@@ -4,7 +4,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
 import { Menu, X } from 'lucide-react';
-import ntLogo from '@/CI/NT_2_v3.png';
+import ntLogo from '@/assets/images/nt-logo.png';
 
 const navItems = [
     { label: 'บริการ', href: '#services' },

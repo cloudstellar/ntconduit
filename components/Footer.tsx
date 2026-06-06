@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { ExternalLink, MapPin, Phone } from 'lucide-react';
-import ntLogo from '@/CI/NT_2_v3.png';
+import ntLogo from '@/assets/images/nt-logo.png';
 
 const footerLinks = [
     { label: 'บริการท่อร้อยสาย', href: '#services' },

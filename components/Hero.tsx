@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { ArrowRight, FileText, PhoneCall } from 'lucide-react';
-import heroImage from '@/CI/web-assets/conduit-hero.jpg';
+import heroImage from '@/assets/images/conduit-hero.jpg';
 
 const proofPoints = [
     'โครงสร้างพื้นฐานโทรคมนาคมของประเทศ',

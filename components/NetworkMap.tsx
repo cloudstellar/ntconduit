@@ -1,9 +1,9 @@
 import Image, { type StaticImageData } from 'next/image';
-import modelCrossRoadImage from '@/CI/web-assets/conduit-model-cross-road.jpg';
-import modelOneSideImage from '@/CI/web-assets/conduit-model-one-side.jpg';
-import modelTwoSideImage from '@/CI/web-assets/conduit-model-two-side.jpg';
-import projectPattayaImage from '@/CI/web-assets/conduit-project-pattaya-work.jpg';
-import projectYaowaratImage from '@/CI/web-assets/conduit-yaowarat-walkway.jpg';
+import modelCrossRoadImage from '@/assets/images/conduit-model-cross-road.jpg';
+import modelOneSideImage from '@/assets/images/conduit-model-one-side.jpg';
+import modelTwoSideImage from '@/assets/images/conduit-model-two-side.jpg';
+import projectPattayaImage from '@/assets/images/conduit-project-pattaya-work.jpg';
+import projectYaowaratImage from '@/assets/images/conduit-yaowarat-walkway.jpg';
 
 const models = [
     {
